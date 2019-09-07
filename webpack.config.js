@@ -38,13 +38,12 @@ module.exports = {
     filename: "[name].js"
   },
   plugins: htmlPlugins,
-  // resolve: {
-  //   alias: {
-  //     // paper: path.resolve(__dirname, 'src/paper-modified'),
-  //     common: path.resolve(__dirname, 'src/common'),
-  //     images: path.resolve(__dirname, 'src/images')
-  //   }
-  // },
+  resolve: {
+    alias: {
+      // paper: path.resolve(__dirname, 'src/paper-modified'),
+      models: path.resolve(__dirname, 'src/models'),
+    }
+  },
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
@@ -53,7 +52,7 @@ module.exports = {
         use: [
           'file-loader'
         ]
-      }
+      },
     ]
   }
 };
